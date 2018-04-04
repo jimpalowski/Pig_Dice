@@ -1,0 +1,44 @@
+.stage {
+ -webkit-perspective: 1000;
+}
+
+.flashcard, .flashcard2 {
+  height:450px;
+  width: 700px;
+  margin: 10% auto;
+  border: 2px solid white transparent;
+  box-shadow: 2px 2px 2px transparent;
+  -webkit-transform-style: preserve-3d;
+  transition: all 0.9s;
+  -webkit-transition: all 0.9s;
+}
+
+.flipped, .back {
+  transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+
+}
+
+.front, .back {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  height: 350px;
+  width: 500px;
+  text-align: center;
+
+}
+
+.front p, .back p {
+  margin-top: 25%;
+  font-size: 3em;
+}
+body{
+  background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/dice-rolling-across-a-craps-table_-1dowyder__F0000.png);
+  color:white;
+}
+
+img{
+  display: inline-block;
+  width:150px;
+  height:auto;
+}
