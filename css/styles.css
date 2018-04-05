@@ -35,10 +35,26 @@
 body{
   background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/dice-rolling-across-a-craps-table_-1dowyder__F0000.png);
   color:white;
+  font-style: italic;
 }
 
 img{
   display: inline-block;
   width:150px;
   height:auto;
+}
+
+.players {
+  font-weight: bold;
+  color: blue;
+
+}
+
+.players1{
+  float:right;
+}
+
+.players2{
+  float:right;
+  margin-right: 60px;
 }

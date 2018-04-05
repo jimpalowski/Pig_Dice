@@ -12,7 +12,8 @@ function Player() {
 
 function Dice(inputNumber){
   this.number = inputNumber;
-}
+  }
+
 
 // score.prototype.roundScore = function () {
 //   return this.diceOne + this.diceTwo;
@@ -59,6 +60,9 @@ $(document).ready(function() {
     $(".diceResult2").text(newDice2.number);
     playerOne.score += newDice.number;
     playerTwo.score += newDice2.number;
+    if(playerOne.score ===1){
+       alert("THis doesnt work")
+    }
     $(".playerOne").text(playerOne.score);
     $(".playerTwo").text(playerTwo.score);
     setTimeout(function() {
