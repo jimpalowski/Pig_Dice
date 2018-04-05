@@ -5,27 +5,26 @@
 // Dice.push(numberone);
 // Dicetwo.push(numbertwo);
 
-function players(selectedplayer){
-this.player = selectedplayer;
+
+function Player() {
+  this.score = 0;
 }
+
 function Dice(inputNumber){
   this.number = inputNumber;
-
-
 }
 
 // score.prototype.roundScore = function () {
 //   return this.diceOne + this.diceTwo;
 // };
 
-players.prototype.playerScores = function () {
-  return this.player;
-
-};
-
-Dice.prototype.newDiceOne = function() {
-  return
-}
+// Player.prototype.playerScores = function () {
+//   return this.player;
+// };
+//
+// Dice.prototype.newDiceOne = function(num) {
+//   return this.player;
+// }
 
 // var add = function(rollOne, rollTwo){
 //   return rollOne += rollTwo;
@@ -41,6 +40,8 @@ Dice.prototype.newDiceOne = function() {
 
 
 
+var playerOne = new Player();
+var playerTwo = new Player();
 
 
 
@@ -48,23 +49,21 @@ Dice.prototype.newDiceOne = function() {
 // user interface logic
 $(document).ready(function() {
   $(".flashcard").on('click', function(event) {
-  $(this).toggleClass('flipped');
+    $(this).toggleClass('flipped');
     event.preventDefault();
     var rollOne = 1 + Math.floor(Math.random()*6);
     var rollTwo = 1 + Math.floor(Math.random()*6);
     var newDice = new Dice(rollOne);
-console.log(newDice);
     var newDice2 = new Dice(rollTwo);
-     $(".diceResult").text(newDice.number);
-     $(".diceResult2").text(newDice2.number);
-console.log("The dice is here:", newDice, newDice2);
-    event.preventDefault();
-  var result = (newDice.number += newDice.number);
-  var result2 = (newDice2.number += newDice2.number);
-  var playerOne = new players(this.player);
-  var playerTwo = new players(this.player);
-  $(".playerOne").text(result);
-  $(".playerTwo").text(result2);
+    $(".diceResult").text(newDice.number);
+    $(".diceResult2").text(newDice2.number);
+    playerOne.score += newDice.number;
+    playerTwo.score += newDice2.number;
+    $(".playerOne").text(playerOne.score);
+    $(".playerTwo").text(playerTwo.score);
+    setTimeout(function() {
+      $(".flashcard").toggleClass('flipped');
+    }, 1000);
   });
 
 });
