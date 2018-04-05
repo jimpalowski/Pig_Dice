@@ -9,20 +9,21 @@ function players(playerOne, playTwo){
   this.playerOne = playerOne;
   this.playerTwo = playerTwo;
 }
-function score(diceOne, diceTwo, score){
-  this.diceOne = diceOne;
-  this.diceTwo = diceTwo;
-
+function Dice(inputNumber){
+  this.number = inputNumber;
 }
-
-score.prototype.roundScore = function () {
-  return this.diceOne + this.diceTwo;
-};
+// score.prototype.roundScore = function () {
+//   return this.diceOne + this.diceTwo;
+// };
 
 players.prototype.playerScores = function () {
   return this.playerOne + this.playerTwo;
 
 };
+
+Dice.prototype.newDiceOne = function() {
+  return this.diceOne;
+}
 // if(Dice[0] == 1){
 //    Dice.push("Oh you lost");
 // }
@@ -42,12 +43,14 @@ $(document).ready(function() {
   $(".flashcard").on('click', function(event) {
   $(this).toggleClass('flipped');
     event.preventDefault();
-    var userDiceOne = 1 + Math.floor(Math.random()*6);
-    var userDiceTwo = 1 + Math.floor(Math.random()*6);
-    var newDice = new score(userDiceOne, userDiceTwo);
-     $(".diceResult").text(newDice);
-     $(".diceResult2").text(newDice);
-console.log("The dice is here:", newDice);
+    var rollOne = 1 + Math.floor(Math.random()*6);
+    var rollTwo = 1 + Math.floor(Math.random()*6);
+    var newDice = new Dice(rollOne);
+console.log(newDice);
+    var newDice2 = new Dice(rollTwo);
+     $(".diceResult").text(newDice.number);
+     $(".diceResult2").text(newDice2.number);
+console.log("The dice is here:", newDice, newDice2);
   });
   $(".players").on('click', function(event) {
   $(this).toggleClass('flipped');
